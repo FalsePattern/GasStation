@@ -1,0 +1,3 @@
+org.spongepowered.tools.obfuscation.MixinObfuscationProcessorInjection
+org.spongepowered.tools.obfuscation.MixinObfuscationProcessorTargets
+com.llamalad7.mixinextras.MixinExtrasAP
