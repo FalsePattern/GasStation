@@ -31,5 +31,5 @@ Full license notice here: https://github.com/LlamaLad7/MixinExtras/blob/master/L
 MixinBooterLegacy is licensed under LGPLv2.1+, and is compatible with LGPLv3.<br>
 Full license notice here: https://github.com/tox1cozZ/mixin-booter-legacy/blob/master/LICENSE
 
-SpongeMixins and classes taken from it are licensed under MIT, and is compatible with LGPLv3.<br>
+SpongeMixins is licensed under MIT, and is compatible with LGPLv3.<br>
 Full license notice here: https://github.com/TimeConqueror/SpongeMixins/blob/master/LICENSE
