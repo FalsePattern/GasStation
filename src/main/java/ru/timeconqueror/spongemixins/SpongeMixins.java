@@ -16,10 +16,10 @@ import org.apache.logging.log4j.Logger;
 /**
  * This is here for SpongeMixins backwards compat
  */
+@SuppressWarnings("unused")
 @Mod(modid = SpongeMixins.MODID, version = "1.5.0", name = SpongeMixins.NAME, acceptableRemoteVersions = "*")
 public class SpongeMixins {
     public static final String NAME = "SpongeMixins Loader";
     public static final String MODID = "spongemixins";
-    @SuppressWarnings("unused")
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 }
