@@ -25,7 +25,7 @@ Full license notice here: https://github.com/FalsePattern/GasStation/blob/master
 SpongePowered Mixins is licensed under MIT, and is compatible with LGPLv3.<br>
 Full license notice here: https://github.com/SpongePowered/Mixin/blob/master/LICENSE.txt
 
-MixinExtras is licensed under LGPLv2.1+, and is compatible with LGPLv3.<br>
+MixinExtras is licensed under MIT, and is compatible with LGPLv3.<br>
 Full license notice here: https://github.com/LlamaLad7/MixinExtras/blob/master/LICENSE
 
 MixinBooterLegacy is licensed under LGPLv2.1+, and is compatible with LGPLv3.<br>
