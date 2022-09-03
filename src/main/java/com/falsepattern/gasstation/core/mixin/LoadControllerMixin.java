@@ -17,6 +17,8 @@ import com.falsepattern.gasstation.ILateMixinLoader;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("UnusedMixin")
 @Mixin(value = LoadController.class, remap = false)
@@ -37,8 +39,9 @@ public abstract class LoadControllerMixin {
         ASMDataTable asmDataTable = (ASMDataTable)eventData[1];
 
         GasStationCore.LOGGER.info("Instantiating all ILateMixinLoader implemented classes...");
-
-        for (ASMDataTable.ASMData asmData : asmDataTable.getAll(ILateMixinLoader.class.getName().replace('.', '/'))) {
+        List<ASMDataTable.ASMData> asmDatas = new ArrayList<>(asmDataTable.getAll(ILateMixinLoader.class.getName().replace('.', '/')));
+        asmDatas.addAll(asmDataTable.getAll(io.github.tox1cozz.mixinbooterlegacy.ILateMixinLoader.class.getName().replace('.', '/')));
+        for (ASMDataTable.ASMData asmData : asmDatas) {
             modClassLoader.addFile(asmData.getCandidate().getModContainer()); // Add to path before `newInstance`
             Class<?> clazz = Class.forName(asmData.getClassName().replace('/', '.'));
             GasStationCore.LOGGER.info("Instantiating {} for its mixins.", clazz);
