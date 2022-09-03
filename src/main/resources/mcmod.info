@@ -1,16 +1,53 @@
 [
-    {
-      "modid": "${modId}",
-      "name": "${modName}",
-      "description": "Just another mixin library with some extras",
-      "version": "${modVersion}",
-      "mcversion": "${minecraftVersion}",
-      "url": "https://github.com/FalsePattern/GasStation",
-      "updateUrl": "",
-      "authorList": ["FalsePattern"],
-      "credits": "",
-      "logoFile": "",
-      "screenshots": [],
-      "dependencies": []
-    }
+  {
+    "modid": "${modId}",
+    "name": "${modName}",
+    "description": "Just another mixin library with some extras",
+    "version": "${modVersion}",
+    "mcversion": "${minecraftVersion}",
+    "url": "https://github.com/FalsePattern/GasStation",
+    "updateUrl": "",
+    "authorList": [
+      "FalsePattern"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  },
+  {
+    "modid": "mixinbooterlegacy",
+    "name": "MixinBooterLegacy",
+    "description": "GasStation's MixinBooterLegacy stub for mods that depend on it",
+    "version": "1.1.2",
+    "mcversion": "${minecraftVersion}",
+    "url": "https://github.com/tox1cozZ/mixin-booter-legacy",
+    "updateUrl": "",
+    "authorList": [
+      "Rongmario",
+      "tox1cozZ"
+    ],
+    "credits": "Thanks Rongmario for a MixinBooter on Minecraft 1.12.2.",
+    "logoFile": "",
+    "screenshots": [],
+    "parent": "${modId}",
+    "dependencies": []
+  },
+  {
+    "modid": "spongemixins",
+    "name": "SpongeMixins",
+    "description": "GasStation's SpongeMixins stub for mods that depend on it",
+    "version": "1.5.0",
+    "mcversion": "${minecraftVersion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Time_Conqueror"
+    ],
+    "credits": "SpongePowered Team",
+    "logoFile": "",
+    "screenshots": [],
+    "parent": "${modId}",
+    "dependencies": []
+  }
 ]

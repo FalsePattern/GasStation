@@ -1,8 +1,8 @@
 package com.falsepattern.gasstation;
 
+import com.falsepattern.gasstation.core.Tags;
+
 import cpw.mods.fml.common.Mod;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MODID,
      version = Tags.VERSION,

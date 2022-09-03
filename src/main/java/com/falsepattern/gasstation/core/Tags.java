@@ -1,4 +1,4 @@
-package com.falsepattern.gasstation;
+package com.falsepattern.gasstation.core;
 
 // Use this class for Strings only. Do not import any classes here. It will lead to issues with Mixins if in use!
 

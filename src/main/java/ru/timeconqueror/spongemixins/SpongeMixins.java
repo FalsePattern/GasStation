@@ -9,25 +9,17 @@
  */
 package ru.timeconqueror.spongemixins;
 
-import java.io.File;
+import cpw.mods.fml.common.Mod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * This is here for SpongeMixins backwards compat
  */
-@SuppressWarnings("unused")
-public final class MinecraftURLClassPath {
-    public static File getJarInModPath(final String jarname) {
-        return com.falsepattern.gasstation.MinecraftURLClassPath.getJarInModPath(jarname);
-    }
-
-    public static boolean findJarInClassPath(final String jarname) {
-        return com.falsepattern.gasstation.MinecraftURLClassPath.findJarInClassPath(jarname);
-    }
-
-    public static void addJar(File pathToJar) throws Exception {
-        com.falsepattern.gasstation.MinecraftURLClassPath.addJar(pathToJar);
-    }
-
-    private MinecraftURLClassPath() {
-    }
+@Mod(modid = SpongeMixins.MODID, version = "1.5.0", name = SpongeMixins.NAME, acceptableRemoteVersions = "*")
+public class SpongeMixins {
+    public static final String NAME = "SpongeMixins Loader";
+    public static final String MODID = "spongemixins";
+    @SuppressWarnings("unused")
+    public static final Logger LOGGER = LogManager.getLogger(NAME);
 }
