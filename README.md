@@ -1,4 +1,5 @@
 # GasStation
+
 GasStation is library that gives mods the ability of loading mixins without embedding the entire SpongePowered Mixins
 library inside themselves.
 
@@ -12,6 +13,8 @@ drag&drop upgrade. However, mods designed to run on GasStation *might not* work 
 extra features included in this library.
 
 Integrated into the buildscript of https://github.com/FalsePattern/ExampleMod1.7.10
+
+### Important: do not remove the 00 prefix from the jar, it's used for making forge load this mod first before others (alphabetical sorting when loading coremods)
 
 ## Licenses
 
