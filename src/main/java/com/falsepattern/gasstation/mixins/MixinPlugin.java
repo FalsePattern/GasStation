@@ -1,4 +1,4 @@
-package com.falsepattern.gasstation.core;
+package com.falsepattern.gasstation.mixins;
 
 import org.spongepowered.asm.lib.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -31,7 +31,7 @@ public class MixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public List<String> getMixins() {
-        return Collections.singletonList("LoadControllerMixin");
+        return Collections.emptyList();
     }
 
     @Override

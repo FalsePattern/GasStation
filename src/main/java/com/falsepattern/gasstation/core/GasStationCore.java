@@ -3,6 +3,7 @@ package com.falsepattern.gasstation.core;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 import net.minecraft.launchwrapper.Launch;
 
+import com.falsepattern.gasstation.Tags;
 import com.llamalad7.mixinextras.MixinExtrasBootstrap;
 import com.falsepattern.gasstation.IEarlyMixinLoader;
 import org.apache.logging.log4j.LogManager;
@@ -22,7 +23,7 @@ import java.util.Map;
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.SortingIndex(Integer.MIN_VALUE + 5)
 @IFMLLoadingPlugin.Name(GasStationCore.PLUGIN_NAME)
-@IFMLLoadingPlugin.TransformerExclusions("com.falsepattern.gasstation")
+@IFMLLoadingPlugin.TransformerExclusions("com.falsepattern.gasstation.core")
 public class GasStationCore implements IFMLLoadingPlugin {
     public static final String PLUGIN_NAME = Tags.MODNAME + " Core Plugin";
     public static final Logger LOGGER = LogManager.getLogger(PLUGIN_NAME);

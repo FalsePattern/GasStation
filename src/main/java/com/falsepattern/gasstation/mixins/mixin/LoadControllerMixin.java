@@ -1,4 +1,4 @@
-package com.falsepattern.gasstation.core.mixin;
+package com.falsepattern.gasstation.mixins.mixin;
 
 import cpw.mods.fml.common.*;
 import cpw.mods.fml.common.discovery.ASMDataTable;
@@ -20,7 +20,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings("UnusedMixin")
 @Mixin(value = LoadController.class, remap = false)
 public abstract class LoadControllerMixin {
 
