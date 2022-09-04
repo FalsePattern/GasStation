@@ -14,8 +14,6 @@ import sun.misc.URLClassPath;
 
 import net.minecraft.launchwrapper.Launch;
 import net.minecraft.launchwrapper.LaunchClassLoader;
-import cpw.mods.fml.common.Loader;
-import cpw.mods.fml.common.ModClassLoader;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,32 +26,14 @@ public class MinecraftURLClassPath {
      *  Utility to manipulate the minecraft URL ClassPath
      */
     private static final Path MOD_DIRECTORY_PATH = new File(Launch.minecraftHome, "mods/").toPath();
-    private static final Field modClassLoaderField;
-    private static final Field loaderinstanceField;
-    private static final Field mainClassLoaderField;
-    private static final Field ucpField;
-    private static final ModClassLoader modClassLoader;
-    private static final LaunchClassLoader mainClassLoader;
     private static final URLClassPath ucp;
 
     static {
         try {
-            modClassLoaderField = Loader.class.getDeclaredField("modClassLoader");
-            modClassLoaderField.setAccessible(true);
-
-            loaderinstanceField = Loader.class.getDeclaredField("instance");
-            loaderinstanceField.setAccessible(true);
-
-            mainClassLoaderField = ModClassLoader.class.getDeclaredField("mainClassLoader");
-            mainClassLoaderField.setAccessible(true);
-
-            ucpField = LaunchClassLoader.class.getSuperclass().getDeclaredField("ucp");
+            Field ucpField = LaunchClassLoader.class.getSuperclass().getDeclaredField("ucp");
             ucpField.setAccessible(true);
 
-            Object loader = loaderinstanceField.get(null);
-            modClassLoader = (ModClassLoader)modClassLoaderField.get(loader);
-            mainClassLoader = (LaunchClassLoader)mainClassLoaderField.get(modClassLoader);
-            ucp = (URLClassPath)ucpField.get(mainClassLoader);
+            ucp = (URLClassPath)ucpField.get(Launch.classLoader);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             throw new RuntimeException(e.getMessage());
         }
