@@ -32,4 +32,7 @@ MixinBooterLegacy is licensed under LGPLv2.1+, and is compatible with LGPLv3.<br
 Full license notice here: https://github.com/tox1cozZ/mixin-booter-legacy/blob/master/LICENSE
 
 SpongeMixins is licensed under MIT, and is compatible with LGPLv3.<br>
-Full license notice here: https://github.com/TimeConqueror/SpongeMixins/blob/master/LICENSE
+Full license notice here: https://github.com/TimeConqueror/SpongeMixins/blob/master/
+
+Mixingasm is licensed under Unlicense, and is compatible with LGPLv3.<br>
+Full license notice here: https://github.com/makamys/Mixingasm/blob/master/UNLICENSE

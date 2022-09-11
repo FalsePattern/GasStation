@@ -49,5 +49,19 @@
     "screenshots": [],
     "parent": "${modId}",
     "dependencies": []
+  },
+  {
+    "modid": "mixingasm",
+    "name": "Mixingasm",
+    "description": "Improves compatibility between mixin mods and ASM mods",
+    "version": "0.2.2",
+    "mcversion": "${minecraftVersion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["makamys"],
+    "logoFile": "",
+    "screenshots": [],
+    "parent": "${modId}",
+    "dependencies": []
   }
 ]
