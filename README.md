@@ -4,7 +4,7 @@ GasStation is library that gives mods the ability of loading mixins without embe
 library inside themselves.
 
 This library is based on SpongeMixins, but with several significant differences:
-- This library provides Mixin 0.8.3 instead of 0.7.11 (new mixin features that are not available in mixin 0.7)
+- This library provides Mixin 0.8.5 instead of 0.7.11 (new mixin features that are not available in mixin 0.7)
 - MixinExtras is included, which has some neat QoL utilities that can be used by mod developers.
 - The early/late mixin loading feature from mixin-booter-legacy is included as a part of the library
 - Mixingasm is included
