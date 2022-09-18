@@ -1,6 +1,6 @@
 // Add your dependencies here
 
 dependencies {
-    shadeCompile("org.spongepowered:mixin:0.8.5-gasstation")
+    shadeCompile("org.spongepowered:mixin:0.8.5-gasstation_2")
     shadeCompile("com.llamalad7:MixinExtras:0.0.12-gasstation")
 }
