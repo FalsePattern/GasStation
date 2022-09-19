@@ -8,6 +8,7 @@ This library is based on SpongeMixins, but with several significant differences:
 - MixinExtras is included, which has some neat QoL utilities that can be used by mod developers.
 - The early/late mixin loading feature from mixin-booter-legacy is included as a part of the library
 - Mixingasm is included
+- It contains some obscure improvements that i haven't seen in any other performance mod yet
 
 GasStation is designed to be 100% backwards compatible with SpongeMixins, and in most cases it's a simple delete and
 drag&drop upgrade. However, mods designed to run on GasStation *might not* work on SpongeMixins if they use any of the
