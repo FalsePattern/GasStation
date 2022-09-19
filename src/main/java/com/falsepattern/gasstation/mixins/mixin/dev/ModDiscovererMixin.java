@@ -1,5 +1,6 @@
-package com.falsepattern.gasstation.mixins.mixin;
+package com.falsepattern.gasstation.mixins.mixin.dev;
 
+import com.falsepattern.gasstation.mixins.IModDiscovererMixin;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,8 +21,13 @@ import java.util.List;
 
 @Mixin(value = ModDiscoverer.class,
        remap = false)
-public abstract class ModDiscovererMixin {
+public abstract class ModDiscovererMixin implements IModDiscovererMixin {
     @Shadow private List<ModCandidate> candidates;
+
+    @Override
+    public List<ModCandidate> getCandidates() {
+        return candidates;
+    }
 
     @Inject(method = "findClasspathMods",
             at = @At(value = "INVOKE",
@@ -30,12 +36,9 @@ public abstract class ModDiscovererMixin {
             require = 1)
     private void smartCheck(ModClassLoader modClassLoader, CallbackInfo ci, List<String> knownLibraries, File[] minecraftSources, int i) {
         if ((Boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
-            File source = minecraftSources[i];
-            if (source.getName().contains("00gasstation")) {
-                FMLLog.fine("Found a minecraft related file at %s, examining for mod candidates", minecraftSources[i].getAbsolutePath());
-                candidates.add(new ModCandidate(minecraftSources[i], minecraftSources[i], ContainerType.JAR, i == 0, true));
-                return;
-            }
+            FMLLog.fine("Found a minecraft related file at %s, examining for mod candidates", minecraftSources[i].getAbsolutePath());
+            candidates.add(new ModCandidate(minecraftSources[i], minecraftSources[i], ContainerType.JAR, i == 0, true));
+            return;
         }
         FMLLog.finer("Skipping known library file %s", minecraftSources[i].getAbsolutePath());
     }

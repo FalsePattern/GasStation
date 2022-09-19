@@ -5,6 +5,9 @@
   "refmap": "mixins.gasstation.refmap.json",
   "target": "@env(PREINIT)",
   "compatibilityLevel": "JAVA_8",
-  "mixins": ["ModDiscovererMixin"]
+  "mixins": [
+    "dev.ModDiscovererMixin",
+    "dev.LoaderMixin"
+  ]
 }
 
