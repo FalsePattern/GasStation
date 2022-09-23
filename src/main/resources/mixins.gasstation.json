@@ -7,11 +7,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "dev.ModDiscovererMixin",
-    "dev.LoaderMixin",
-    "regex.ModContainerFactoryMixin",
-    "regex.ModDiscovererMixin",
-    "regex.JarDiscovererMixin",
-    "regex.DirectoryDiscovererMixin"
+    "dev.LoaderMixin"
   ]
 }
 
