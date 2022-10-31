@@ -6,8 +6,8 @@
   "target": "@env(PREINIT)",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "dev.ModDiscovererMixin",
-    "dev.LoaderMixin"
-  ]
+
+  ],
+  "plugin": "com.falsepattern.gasstation.mixins.DevMixinPlugin"
 }
 
