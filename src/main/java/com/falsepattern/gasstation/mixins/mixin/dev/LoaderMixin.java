@@ -27,7 +27,6 @@ public abstract class LoaderMixin {
         List<ModCandidate> dupes = new ArrayList<>();
         for(ModCandidate candidate: candidates) {
             File file = candidate.getModContainer().getAbsoluteFile().toPath().normalize().toFile();
-                System.out.println(file);
             boolean isUnique = true;
             for (ModCandidate uniqueCandidate: uniques) {
                 File uniqueFile = uniqueCandidate.getModContainer().getAbsoluteFile().toPath().normalize().toFile();
