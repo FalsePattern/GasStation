@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.6",
-  "package": "makamys.mixingasm.mixin",
+  "package": "com.falsepattern.gasstation.mixins.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
 
