@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import net.minecraft.launchwrapper.Launch;
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.ModClassLoader;
 import cpw.mods.fml.common.discovery.ContainerType;
@@ -35,12 +34,8 @@ public abstract class ModDiscovererMixin implements IModDiscovererMixin {
             locals = LocalCapture.CAPTURE_FAILHARD,
             require = 1)
     private void smartCheck(ModClassLoader modClassLoader, CallbackInfo ci, List<String> knownLibraries, File[] minecraftSources, int i) {
-        if ((Boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
-            FMLLog.fine("Found a minecraft related file at %s, examining for mod candidates", minecraftSources[i].getAbsolutePath());
-            candidates.add(new ModCandidate(minecraftSources[i], minecraftSources[i], ContainerType.JAR, i == 0, true));
-            return;
-        }
-        FMLLog.finer("Skipping known library file %s", minecraftSources[i].getAbsolutePath());
+        FMLLog.fine("Found a minecraft related file at %s, examining for mod candidates", minecraftSources[i].getAbsolutePath());
+        candidates.add(new ModCandidate(minecraftSources[i], minecraftSources[i], ContainerType.JAR, i == 0, true));
     }
 
     @Redirect(method = "findClasspathMods",

@@ -5,7 +5,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import net.minecraft.launchwrapper.Launch;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.ModContainer;
 import cpw.mods.fml.common.discovery.ModCandidate;
@@ -23,29 +22,27 @@ public abstract class LoaderMixin {
                      target = "Lcpw/mods/fml/common/discovery/ModDiscoverer;identifyMods()Ljava/util/List;"),
               require = 1)
     private List<ModContainer> removeDuplicateFiles(ModDiscoverer instance) {
-        if ((Boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
-            List<ModCandidate> candidates = ((IModDiscovererMixin)instance).getCandidates();
-            List<ModCandidate> uniques = new ArrayList<>();
-            List<ModCandidate> dupes = new ArrayList<>();
-            for(ModCandidate candidate: candidates) {
-                File file = candidate.getModContainer().getAbsoluteFile().toPath().normalize().toFile();
+        List<ModCandidate> candidates = ((IModDiscovererMixin)instance).getCandidates();
+        List<ModCandidate> uniques = new ArrayList<>();
+        List<ModCandidate> dupes = new ArrayList<>();
+        for(ModCandidate candidate: candidates) {
+            File file = candidate.getModContainer().getAbsoluteFile().toPath().normalize().toFile();
                 System.out.println(file);
-                boolean isUnique = true;
-                for (ModCandidate uniqueCandidate: uniques) {
-                    File uniqueFile = uniqueCandidate.getModContainer().getAbsoluteFile().toPath().normalize().toFile();
-                    if (file.equals(uniqueFile)) {
-                        isUnique = false;
-                        break;
-                    }
-                }
-                if (isUnique) {
-                    uniques.add(candidate);
-                } else {
-                    dupes.add(candidate);
+            boolean isUnique = true;
+            for (ModCandidate uniqueCandidate: uniques) {
+                File uniqueFile = uniqueCandidate.getModContainer().getAbsoluteFile().toPath().normalize().toFile();
+                if (file.equals(uniqueFile)) {
+                    isUnique = false;
+                    break;
                 }
             }
-            candidates.removeAll(dupes);
+            if (isUnique) {
+                uniques.add(candidate);
+            } else {
+                dupes.add(candidate);
+            }
         }
+        candidates.removeAll(dupes);
         return instance.identifyMods();
     }
 }
