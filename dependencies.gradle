@@ -2,5 +2,5 @@
 
 dependencies {
     shadeCompile("org.spongepowered:mixin:0.8.5-gasstation_5")
-    shadeCompile("com.llamalad7:MixinExtras:0.1.0-gasstation")
+    shadeCompile("com.llamalad7:MixinExtras:0.1.1-gasstation")
 }
