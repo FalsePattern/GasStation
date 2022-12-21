@@ -1,4 +1,4 @@
-//version: 1656003793falsepattern55
+//version: 1656003793falsepattern56
 /*
 DO NOT CHANGE THIS FILE!
 
@@ -406,7 +406,7 @@ runClient {
 
     if (usesMixins.toBoolean()) {
         arguments += [
-                "--mods=../build/libs/$archivesBaseName-${version}.jar"
+                "--mods=" + Paths.get("$projectDir").resolve(minecraft.runDir).normalize().relativize(Paths.get("$projectDir/build/libs/$archivesBaseName-${version}.jar"))
         ]
     }
 
@@ -436,7 +436,7 @@ runServer {
 
     if (usesMixins.toBoolean()) {
         arguments += [
-                "--mods=../build/libs/$archivesBaseName-${version}.jar"
+                "--mods=" + Paths.get("$projectDir").resolve(minecraft.runDir).normalize().relativize(Paths.get("$projectDir/build/libs/$archivesBaseName-${version}.jar"))
         ]
     }
 
