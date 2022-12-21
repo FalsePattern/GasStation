@@ -307,15 +307,8 @@ dependencies {
         annotationProcessor("org.ow2.asm:asm-debug-all:5.0.3")
         annotationProcessor("com.google.guava:guava:24.1.1-jre")
         annotationProcessor("com.google.code.gson:gson:2.8.6")
-        annotationProcessor("com.llamalad7:MixinExtras:0.1.0-gasstation")
-        annotationProcessor("org.spongepowered:mixin:0.8.5-gasstation_5")
-        compile("org.spongepowered:mixin:0.8.5-gasstation_5")
-        compile("com.llamalad7:MixinExtras:0.1.0-gasstation")
-        compile("com.falsepattern:00gasstation-mc1.7.10:0.4.0:dev")
-    } else if(hasMixinDeps.toBoolean()) {
-        runtime("com.llamalad7:MixinExtras:0.1.0-gasstation")
-        runtime("org.spongepowered:mixin:0.8.5-gasstation_5")
-        runtime("com.falsepattern:00gasstation-mc1.7.10:0.4.0:dev")
+        annotationProcessor("com.llamalad7:MixinExtras:0.1.1-gasstation")
+        annotationProcessor("org.spongepowered:mixin:0.8.5-gasstation_6")
     }
 }
 
