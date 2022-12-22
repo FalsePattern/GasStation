@@ -742,10 +742,6 @@ if (curseForgeProjectId != "" && System.getenv("CURSEFORGE_TOKEN") != null) {
             addCurseForgeRelation(type, name)
         }
     }
-
-    if (usesMixins.toBoolean()) {
-        addCurseForgeRelation("requiredDependency", "gasstation")
-    }
     tasks.curseforge.dependsOn(build)
     tasks.publish.dependsOn(tasks.curseforge)
 }
@@ -775,9 +771,6 @@ if (modrinthProjectId != "" && System.getenv("MODRINTH_TOKEN") != null) {
             String name = parts[1]
             addModrinthDep(scope, type, name)
         }
-    }
-    if (usesMixins.toBoolean()) {
-        addModrinthDep("required", "project", "cdeAhgfp")
     }
     tasks.modrinth.dependsOn(build)
     tasks.publish.dependsOn(tasks.modrinth)
