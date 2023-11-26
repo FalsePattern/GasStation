@@ -1,3 +1,8 @@
+# USE UNIMIXINS!
+At this point GasStation is obsolete, unmaintained, and has been completely superseeded by UniMixins, which can load all GasStation-requiring mods.
+
+https://github.com/LegacyModdingMC/UniMixins
+
 # GasStation
 
 GasStation is library that gives mods the ability of loading mixins without embedding the entire SpongePowered Mixins
